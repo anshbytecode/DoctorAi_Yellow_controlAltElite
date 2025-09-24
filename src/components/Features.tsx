@@ -2,7 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MessageSquare, AlertTriangle, Calendar, Award, Bell, Globe } from "lucide-react";
 
-const Features = () => {
+interface FeaturesProps {
+  id?: string; // optional id for scrolling
+}
+
+const Features = ({ id }: FeaturesProps) => {
   const coreFeatures = [
     {
       icon: MessageSquare,
@@ -60,7 +64,7 @@ const Features = () => {
   };
 
   return (
-    <section className="py-20 bg-muted/50">
+    <section id={id} className="py-20 bg-muted/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
